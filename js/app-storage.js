@@ -1,0 +1,1 @@
+const cards=document.querySelectorAll(".card");cards.forEach((card)=>{card.addEventListener("click",()=>{const obj={imageURL:card.children[0].children[1].src,title:card.children[1].children[0].innerText,price:card.children[1].children[1].innerText,};fetch(`http://localhost:3001/cards`,{method:"POST",headers:{"Content-type":"application/json",},body:JSON.stringify(obj),})})})
